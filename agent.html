@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
+    <title>Embedded Messaging Demo</title>
+</head>
+<body>
+    <h1>Welcome to My Agent Page</h1>
+    <p>Click the chat button in the corner to talk to the agent.</p>
+
+    <script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+
+			embeddedservice_bootstrap.init(
+				'00DgL000000AwyA',
+				'Beacon_Messaging_channel',
+				'https://orgfarm-e6181d1557-dev-ed.develop.my.site.com/ESWBeaconMessagingchann1755171619338',
+				{
+					scrt2URL: 'https://orgfarm-e6181d1557-dev-ed.develop.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+<script type='text/javascript' src='https://orgfarm-e6181d1557-dev-ed.develop.my.site.com/ESWBeaconMessagingchann1755171619338/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+
+</body>
+</html>
